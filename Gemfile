@@ -16,6 +16,10 @@ gem 'rswag'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # faker and factory_bot moved to production, because in this specific use case
+  # we need to generate data in production
+  # gem 'factory_bot_rails'
+  # gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
   gem 'rswag-specs'
 end
 
