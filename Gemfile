@@ -25,6 +25,7 @@ end
 
 group :development do
   gem 'amazing_print'
+  gem 'jazz_fingers'
   gem 'listen', '~> 3.3'
   gem 'pry-rails'
   gem 'rubocop', require: false
