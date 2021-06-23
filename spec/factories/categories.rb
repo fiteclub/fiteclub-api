@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :category do
-    resume { nil }
-    name { "MyString" }
+    association :resume
+    name { "Skills" }
   end
 end

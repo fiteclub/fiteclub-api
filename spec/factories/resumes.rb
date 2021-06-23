@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :resume do
-    name { "MyString" }
-    email { "MyString" }
-    github { "MyString" }
+    name { "Leslie Knope" }
+    email { "lilsebastian78@hotmail.com" }
+    github { "elnope" }
   end
 end
