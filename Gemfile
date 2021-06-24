@@ -28,6 +28,7 @@ group :development do
   gem 'jazz_fingers'
   gem 'listen', '~> 3.3'
   gem 'pry-rails'
+  gem 'ripper-tags'
   gem 'rubocop', require: false
   gem 'spring'
 end
