@@ -248,6 +248,7 @@ DEPENDENCIES
   faker!
   jazz_fingers
   jbuilder (~> 2.7)
+  json-schema
   listen (~> 3.3)
   pg (~> 1.1)
   pry-rails
