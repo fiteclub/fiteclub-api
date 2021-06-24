@@ -1,0 +1,18 @@
+{
+  "name": "Leslie Knope",
+  "email": "lilsebastian78@hotmail.com",
+  "github": "elnope",
+  "categories": [
+    {
+      "name": "Skills",
+      "list_items": [
+        {
+          "content": "rails"
+        },
+        {
+          "content": "ruby"
+        }
+      ]
+    }
+  ]
+}
