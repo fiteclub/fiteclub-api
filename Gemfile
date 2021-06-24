@@ -35,6 +35,7 @@ end
 
 group :test do
   gem 'shoulda-matchers'
+  gem 'json_matchers'
   gem 'json-schema'
 end
 
