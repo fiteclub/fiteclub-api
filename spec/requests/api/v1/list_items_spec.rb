@@ -9,6 +9,7 @@ RSpec.describe "Api::V1::ListItems", type: :request do
       expect(response.body).to include(list_item.content)
     end
   end
+
   describe "GET /index" do
     pending "add some examples (or delete) #{__FILE__}"
   end
