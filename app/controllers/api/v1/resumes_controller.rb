@@ -5,7 +5,15 @@ module Api
 
       # GET /
       def show
-        render json: @resume
+        render json: @resume, include: { 
+          categories: { 
+            include: {
+              list_items: { only: :content}
+            },
+            only: :name
+          }
+        },
+        only: [:name, :email, :github]
       end
 
       private
