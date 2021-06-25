@@ -15,7 +15,7 @@ gem 'rspec-rails'
 gem 'rswag'
 
 group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # faker and factory_bot moved to production, because in this specific use case
   # we need to generate data in production
   # gem 'factory_bot_rails'
@@ -34,8 +34,8 @@ group :development do
 end
 
 group :test do
-  gem 'shoulda-matchers'
   gem 'json_matchers'
+  gem 'shoulda-matchers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
