@@ -7,170 +7,421 @@
   "default": {},
   "examples": [
       {
-          "name": "Leslie Knope",
-          "email": "lilsebastian78@hotmail.com",
-          "github": "elnope",
-          "categories": [
+          "Name": "Leslie Knope",
+          "Email": "lilsebastian@hotmail.com",
+          "Github": "knope",
+          "CharacterTraits": [
+              "Curious",
+              "Creative"
+          ],
+          "Languages": [
+              "Ruby",
+              "Bash"
+          ],
+          "Technologies": [
+              "Rails",
+              "PostgreSQL"
+          ],
+          "Skills": [
+              "Data redundancy",
+              "Information security"
+          ],
+          "Experience": [
               {
-                  "name": "Skills",
-                  "list_items": [
-                      {
-                          "content": "rails"
-                      },
-                      {
-                          "content": "ruby"
-                      }
+                  "Year_begin": 1999,
+                  "Year_end": 2005,
+                  "Title": "Lead Developer",
+                  "Organization": "Pawnee Systems",
+                  "Details": [
+                      "Did a thing",
+                      "Did another thing"
                   ]
+              },
+              {
+                  "Year_begin": 1999,
+                  "Year_end": 2005,
+                  "Title": "Lead Developer",
+                  "Organization": "Pawnee Systems",
+                  "Details": [
+                      "Did a thing",
+                      "Did another thing"
+                  ]
+              }
+          ],
+          "Education": [
+              {
+                  "Year": 1999,
+                  "Degree": "BS Business Management",
+                  "School": "Pawnee University"
               }
           ]
       }
   ],
   "required": [
-      "name",
-      "email",
-      "github",
-      "categories"
+      "Name",
+      "Email",
+      "Github",
+      "CharacterTraits",
+      "Languages",
+      "Technologies",
+      "Skills",
+      "Experience",
+      "Education"
   ],
   "properties": {
-      "name": {
-          "$id": "#/properties/name",
+      "Name": {
+          "$id": "#/properties/Name",
           "type": "string",
-          "title": "The name schema",
+          "title": "The Name schema",
           "description": "An explanation about the purpose of this instance.",
           "default": "",
           "examples": [
               "Leslie Knope"
           ]
       },
-      "email": {
-          "$id": "#/properties/email",
+      "Email": {
+          "$id": "#/properties/Email",
           "type": "string",
-          "title": "The email schema",
+          "title": "The Email schema",
           "description": "An explanation about the purpose of this instance.",
           "default": "",
           "examples": [
-              "lilsebastian78@hotmail.com"
+              "lilsebastian@hotmail.com"
           ]
       },
-      "github": {
-          "$id": "#/properties/github",
+      "Github": {
+          "$id": "#/properties/Github",
           "type": "string",
-          "title": "The github schema",
+          "title": "The Github schema",
           "description": "An explanation about the purpose of this instance.",
           "default": "",
           "examples": [
-              "elnope"
+              "knope"
           ]
       },
-      "categories": {
-          "$id": "#/properties/categories",
+      "CharacterTraits": {
+          "$id": "#/properties/CharacterTraits",
           "type": "array",
-          "title": "The categories schema",
+          "title": "The CharacterTraits schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": [],
+          "examples": [
+              [
+                  "Curious",
+                  "Creative"
+              ]
+          ],
+          "additionalItems": true,
+          "items": {
+              "$id": "#/properties/CharacterTraits/items",
+              "anyOf": [
+                  {
+                      "$id": "#/properties/CharacterTraits/items/anyOf/0",
+                      "type": "string",
+                      "title": "The first anyOf schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": "",
+                      "examples": [
+                          "Curious",
+                          "Creative"
+                      ]
+                  }
+              ]
+          }
+      },
+      "Languages": {
+          "$id": "#/properties/Languages",
+          "type": "array",
+          "title": "The Languages schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": [],
+          "examples": [
+              [
+                  "Ruby",
+                  "Bash"
+              ]
+          ],
+          "additionalItems": true,
+          "items": {
+              "$id": "#/properties/Languages/items",
+              "anyOf": [
+                  {
+                      "$id": "#/properties/Languages/items/anyOf/0",
+                      "type": "string",
+                      "title": "The first anyOf schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": "",
+                      "examples": [
+                          "Ruby",
+                          "Bash"
+                      ]
+                  }
+              ]
+          }
+      },
+      "Technologies": {
+          "$id": "#/properties/Technologies",
+          "type": "array",
+          "title": "The Technologies schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": [],
+          "examples": [
+              [
+                  "Rails",
+                  "PostgreSQL"
+              ]
+          ],
+          "additionalItems": true,
+          "items": {
+              "$id": "#/properties/Technologies/items",
+              "anyOf": [
+                  {
+                      "$id": "#/properties/Technologies/items/anyOf/0",
+                      "type": "string",
+                      "title": "The first anyOf schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": "",
+                      "examples": [
+                          "Rails",
+                          "PostgreSQL"
+                      ]
+                  }
+              ]
+          }
+      },
+      "Skills": {
+          "$id": "#/properties/Skills",
+          "type": "array",
+          "title": "The Skills schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": [],
+          "examples": [
+              [
+                  "Data redundancy",
+                  "Information security"
+              ]
+          ],
+          "additionalItems": true,
+          "items": {
+              "$id": "#/properties/Skills/items",
+              "anyOf": [
+                  {
+                      "$id": "#/properties/Skills/items/anyOf/0",
+                      "type": "string",
+                      "title": "The first anyOf schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": "",
+                      "examples": [
+                          "Data redundancy",
+                          "Information security"
+                      ]
+                  }
+              ]
+          }
+      },
+      "Experience": {
+          "$id": "#/properties/Experience",
+          "type": "array",
+          "title": "The Experience schema",
           "description": "An explanation about the purpose of this instance.",
           "default": [],
           "examples": [
               [
                   {
-                      "name": "Skills",
-                      "list_items": [
-                          {
-                              "content": "rails"
-                          },
-                          {
-                              "content": "ruby"
-                          }
+                      "Year_begin": 1999,
+                      "Year_end": 2005,
+                      "Title": "Lead Developer",
+                      "Organization": "Pawnee Systems",
+                      "Details": [
+                          "Did a thing",
+                          "Did another thing"
+                      ]
+                  },
+                  {
+                      "Year_begin": 1999,
+                      "Year_end": 2005,
+                      "Title": "Lead Developer",
+                      "Organization": "Pawnee Systems",
+                      "Details": [
+                          "Did a thing",
+                          "Did another thing"
                       ]
                   }
               ]
           ],
           "additionalItems": true,
           "items": {
-              "$id": "#/properties/categories/items",
+              "$id": "#/properties/Experience/items",
               "anyOf": [
                   {
-                      "$id": "#/properties/categories/items/anyOf/0",
+                      "$id": "#/properties/Experience/items/anyOf/0",
                       "type": "object",
                       "title": "The first anyOf schema",
                       "description": "An explanation about the purpose of this instance.",
                       "default": {},
                       "examples": [
                           {
-                              "name": "Skills",
-                              "list_items": [
-                                  {
-                                      "content": "rails"
-                                  },
-                                  {
-                                      "content": "ruby"
-                                  }
+                              "Year_begin": 1999,
+                              "Year_end": 2005,
+                              "Title": "Lead Developer",
+                              "Organization": "Pawnee Systems",
+                              "Details": [
+                                  "Did a thing",
+                                  "Did another thing"
                               ]
                           }
                       ],
                       "required": [
-                          "name",
-                          "list_items"
+                          "Year_begin",
+                          "Year_end",
+                          "Title",
+                          "Organization",
+                          "Details"
                       ],
                       "properties": {
-                          "name": {
-                              "$id": "#/properties/categories/items/anyOf/0/properties/name",
+                          "Year_begin": {
+                              "$id": "#/properties/Experience/items/anyOf/0/properties/Year_begin",
+                              "type": "integer",
+                              "title": "The Year_begin schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": 0,
+                              "examples": [
+                                  1999
+                              ]
+                          },
+                          "Year_end": {
+                              "$id": "#/properties/Experience/items/anyOf/0/properties/Year_end",
+                              "type": "integer",
+                              "title": "The Year_end schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": 0,
+                              "examples": [
+                                  2005
+                              ]
+                          },
+                          "Title": {
+                              "$id": "#/properties/Experience/items/anyOf/0/properties/Title",
                               "type": "string",
-                              "title": "The name schema",
+                              "title": "The Title schema",
                               "description": "An explanation about the purpose of this instance.",
                               "default": "",
                               "examples": [
-                                  "Skills"
+                                  "Lead Developer"
                               ]
                           },
-                          "list_items": {
-                              "$id": "#/properties/categories/items/anyOf/0/properties/list_items",
+                          "Organization": {
+                              "$id": "#/properties/Experience/items/anyOf/0/properties/Organization",
+                              "type": "string",
+                              "title": "The Organization schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": "",
+                              "examples": [
+                                  "Pawnee Systems"
+                              ]
+                          },
+                          "Details": {
+                              "$id": "#/properties/Experience/items/anyOf/0/properties/Details",
                               "type": "array",
-                              "title": "The list_items schema",
+                              "title": "The Details schema",
                               "description": "An explanation about the purpose of this instance.",
                               "default": [],
                               "examples": [
                                   [
-                                      {
-                                          "content": "rails"
-                                      },
-                                      {
-                                          "content": "ruby"
-                                      }
+                                      "Did a thing",
+                                      "Did another thing"
                                   ]
                               ],
                               "additionalItems": true,
                               "items": {
-                                  "$id": "#/properties/categories/items/anyOf/0/properties/list_items/items",
+                                  "$id": "#/properties/Experience/items/anyOf/0/properties/Details/items",
                                   "anyOf": [
                                       {
-                                          "$id": "#/properties/categories/items/anyOf/0/properties/list_items/items/anyOf/0",
-                                          "type": "object",
+                                          "$id": "#/properties/Experience/items/anyOf/0/properties/Details/items/anyOf/0",
+                                          "type": "string",
                                           "title": "The first anyOf schema",
                                           "description": "An explanation about the purpose of this instance.",
-                                          "default": {},
+                                          "default": "",
                                           "examples": [
-                                              {
-                                                  "content": "rails"
-                                              }
-                                          ],
-                                          "required": [
-                                              "content"
-                                          ],
-                                          "properties": {
-                                              "content": {
-                                                  "$id": "#/properties/categories/items/anyOf/0/properties/list_items/items/anyOf/0/properties/content",
-                                                  "type": "string",
-                                                  "title": "The content schema",
-                                                  "description": "An explanation about the purpose of this instance.",
-                                                  "default": "",
-                                                  "examples": [
-                                                      "rails"
-                                                  ]
-                                              }
-                                          },
-                                          "additionalProperties": true
+                                              "Did a thing",
+                                              "Did another thing"
+                                          ]
                                       }
                                   ]
                               }
+                          }
+                      },
+                      "additionalProperties": true
+                  }
+              ]
+          }
+      },
+      "Education": {
+          "$id": "#/properties/Education",
+          "type": "array",
+          "title": "The Education schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": [],
+          "examples": [
+              [
+                  {
+                      "Year": 1999,
+                      "Degree": "BS Business Management",
+                      "School": "Pawnee University"
+                  }
+              ]
+          ],
+          "additionalItems": true,
+          "items": {
+              "$id": "#/properties/Education/items",
+              "anyOf": [
+                  {
+                      "$id": "#/properties/Education/items/anyOf/0",
+                      "type": "object",
+                      "title": "The first anyOf schema",
+                      "description": "An explanation about the purpose of this instance.",
+                      "default": {},
+                      "examples": [
+                          {
+                              "Year": 1999,
+                              "Degree": "BS Business Management",
+                              "School": "Pawnee University"
+                          }
+                      ],
+                      "required": [
+                          "Year",
+                          "Degree",
+                          "School"
+                      ],
+                      "properties": {
+                          "Year": {
+                              "$id": "#/properties/Education/items/anyOf/0/properties/Year",
+                              "type": "integer",
+                              "title": "The Year schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": 0,
+                              "examples": [
+                                  1999
+                              ]
+                          },
+                          "Degree": {
+                              "$id": "#/properties/Education/items/anyOf/0/properties/Degree",
+                              "type": "string",
+                              "title": "The Degree schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": "",
+                              "examples": [
+                                  "BS Business Management"
+                              ]
+                          },
+                          "School": {
+                              "$id": "#/properties/Education/items/anyOf/0/properties/School",
+                              "type": "string",
+                              "title": "The School schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": "",
+                              "examples": [
+                                  "Pawnee University"
+                              ]
                           }
                       },
                       "additionalProperties": true
