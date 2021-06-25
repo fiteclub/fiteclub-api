@@ -251,7 +251,6 @@ DEPENDENCIES
   faker!
   jazz_fingers
   jbuilder (~> 2.7)
-  json-schema
   json_matchers
   listen (~> 3.3)
   pg (~> 1.1)
