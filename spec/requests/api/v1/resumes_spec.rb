@@ -11,7 +11,10 @@ RSpec.describe 'Api::V1::Resumes', type: :request do
       expect(response).to be_successful
       expect(response.body).to include(resume.name, resume.email, resume.github)
     end
-    it 'returns desired JSON format' do
+    it 'returns desired interim step JSON format' do
+      expect(response).to match_json_schema('resumes_interim_step')
+    end
+    it 'returns desired final JSON format' do
       expect(response.status).to eq 200
       expect(response).to match_json_schema('resumes')
     end
