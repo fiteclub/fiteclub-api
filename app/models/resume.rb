@@ -10,7 +10,7 @@ class Resume < ApplicationRecord
 
   def items_by_category
     categories.each_with_object({}) do |category, new_hash|
-      new_hash[category.name] = category.list_items.pluck(:content)
+      new_hash[category.name.downcase] = category.list_items.pluck(:content)
     end
   end
 end
