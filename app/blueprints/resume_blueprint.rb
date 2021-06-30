@@ -3,6 +3,8 @@ class ResumeBlueprint < Blueprinter::Base
 
   view :normal do
     fields :name, :email, :github
-    association :categories, blueprint: CategoryBlueprint
+    field :items do |resume| # rubocop:disable Style/SymbolProc
+      resume.items_by_category
+    end
   end
 end
