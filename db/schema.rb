@@ -10,34 +10,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_210_623_021_248) do
+ActiveRecord::Schema.define(version: 2021_06_30_014555) do
+
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
-  create_table 'categories', force: :cascade do |t|
-    t.bigint 'resume_id', null: false
-    t.string 'name'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.index ['resume_id'], name: 'index_categories_on_resume_id'
+  create_table "categories", force: :cascade do |t|
+    t.bigint "resume_id", null: false
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["resume_id"], name: "index_categories_on_resume_id"
   end
 
-  create_table 'list_items', force: :cascade do |t|
-    t.bigint 'category_id', null: false
-    t.string 'content'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.index ['category_id'], name: 'index_list_items_on_category_id'
+  create_table "jobs", force: :cascade do |t|
+    t.bigint "resume_id", null: false
+    t.string "organization"
+    t.string "title"
+    t.integer "start_year"
+    t.integer "end_year"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["resume_id"], name: "index_jobs_on_resume_id"
   end
 
-  create_table 'resumes', force: :cascade do |t|
-    t.string 'name'
-    t.string 'email'
-    t.string 'github'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
+  create_table "list_items", force: :cascade do |t|
+    t.bigint "category_id", null: false
+    t.string "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_list_items_on_category_id"
   end
 
-  add_foreign_key 'categories', 'resumes'
-  add_foreign_key 'list_items', 'categories'
+  create_table "resumes", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "github"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "categories", "resumes"
+  add_foreign_key "jobs", "resumes"
+  add_foreign_key "list_items", "categories"
 end

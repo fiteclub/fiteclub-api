@@ -1,6 +1,7 @@
 class Resume < ApplicationRecord
   has_many :categories, dependent: :destroy
   has_many :list_items, through: :categories
+  has_many :jobs, dependent: :destroy
   before_save { email.downcase! }
   validates :name, presence: true
   validates :email, presence: true, length: { maximum: 255 },
