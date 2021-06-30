@@ -6,5 +6,6 @@ class ResumeBlueprint < Blueprinter::Base
     field :items do |resume| # rubocop:disable Style/SymbolProc
       resume.items_by_category
     end
+    association :jobs, blueprint: JobBlueprint
   end
 end
