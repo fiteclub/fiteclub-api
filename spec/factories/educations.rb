@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :education do
-    resume { nil }
-    organization { "MyString" }
-    degree { "MyString" }
-    grad_year { "" }
+    association :resume
+    organization { "Pawnee University" }
+    degree { "BS Business Management" }
+    grad_year { "1989" }
   end
 end
