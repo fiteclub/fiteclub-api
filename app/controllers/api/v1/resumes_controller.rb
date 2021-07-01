@@ -3,17 +3,14 @@ module Api
     class ResumesController < ApplicationController
       before_action :set_resume, only: %i[show update destroy]
 
-      # GET /
+      # GET /resumes
+      def index
+        @resumes = Resume.order('id ASC')
+        render json: @resumes
+      end
+
+      # GET /resumes/1
       def show
-        # render json: @resume, include: {
-        #   categories: {
-        #     include: {
-        #       list_items: { only: :content }
-        #     },
-        #     only: :name
-        #   }
-        # },
-        #        only: %i[name email github]
         resume = ResumeBlueprint.render @resume, view: :normal
         render json: resume
       end
