@@ -1,7 +1,11 @@
 FactoryBot.define do
   factory :resume do
-    name { 'Leslie Knope' }
-    email { 'lilsebastian78@hotmail.com' }
-    github { 'elnope' }
+    name { Faker::TvShows::ParksAndRec.character }
+    email { Faker::Internet.email }
+    github { Faker::Name.last_name }
+
+    factory :resume_with_categories do
+      categories { [association(:category)] }
+    end
   end
 end
