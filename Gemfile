@@ -21,6 +21,7 @@ group :development, :test do
   # we need to generate data in production
   # gem 'factory_bot_rails'
   # gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
+  gem 'exceptional_absurdity_mill', git: 'https://github.com/fiteclub/exceptional_absurdity_mill.git', branch: 'master'
   gem 'rswag-specs'
 end
 

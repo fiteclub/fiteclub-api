@@ -6,6 +6,14 @@ GIT
     faker (2.18.0)
       i18n (>= 1.6, < 2)
 
+GIT
+  remote: https://github.com/fiteclub/exceptional_absurdity_mill.git
+  revision: 8a63266aa9df9bea6c9449a2f26146f6d3b21fd1
+  branch: master
+  specs:
+    exceptional_absurdity_mill (0.1.0)
+      faker (~> 2.18.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -277,6 +285,7 @@ DEPENDENCIES
   blueprinter
   bootsnap (>= 1.4.4)
   byebug
+  exceptional_absurdity_mill!
   factory_bot_rails
   faker!
   guard-rspec
