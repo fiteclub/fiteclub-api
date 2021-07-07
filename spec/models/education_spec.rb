@@ -1,5 +1,9 @@
 require 'rails_helper'
+require 'models/concerns/listable_spec'
 
 RSpec.describe Education, type: :model do
-  it { should belong_to(:resume) }
+  describe 'associations' do
+    it { should belong_to(:resume) }
+    it_behaves_like 'listable'
+  end
 end
