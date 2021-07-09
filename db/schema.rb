@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_07_210812) do
+ActiveRecord::Schema.define(version: 2021_07_09_170204) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,13 +45,11 @@ ActiveRecord::Schema.define(version: 2021_07_07_210812) do
   end
 
   create_table "list_items", force: :cascade do |t|
-    t.bigint "category_id", null: false
     t.string "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "listable_type", null: false
     t.bigint "listable_id", null: false
-    t.index ["category_id"], name: "index_list_items_on_category_id"
     t.index ["listable_type", "listable_id"], name: "index_list_items_on_listable"
   end
 
@@ -66,5 +64,4 @@ ActiveRecord::Schema.define(version: 2021_07_07_210812) do
   add_foreign_key "categories", "resumes"
   add_foreign_key "educations", "resumes"
   add_foreign_key "jobs", "resumes"
-  add_foreign_key "list_items", "categories"
 end
