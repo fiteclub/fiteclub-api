@@ -11,8 +11,9 @@ module Api
 
       # GET /resumes/1
       def show
-        resume = ResumeBlueprint.render @resume, view: :normal
-        render json: resume
+        # resume = ResumeBlueprint.render @resume, view: :normal
+        # render json: resume
+        render 'resumes/show.json.jbuilder'
       end
 
       private
