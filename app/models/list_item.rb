@@ -1,3 +1,3 @@
 class ListItem < ApplicationRecord
-  belongs_to :category
+  belongs_to :listable, polymorphic: true
 end
