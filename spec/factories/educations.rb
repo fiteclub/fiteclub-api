@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :education do
-    resume
+    association :resume
     created_at { Time.now }
     updated_at { Time.now }
     organization { Faker::Educator.university }

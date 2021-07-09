@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :category do
-    resume
+    association :resume
     created_at { Time.now }
     updated_at { Time.now }
     name { Faker::Lorem.word }

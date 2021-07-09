@@ -10,14 +10,13 @@ end
 
 FactoryBot.define do
   factory :job do
-    resume
+    association :resume
     created_at { Time.now }
     updated_at { Time.now }
-    association :resume
     organization { Faker::Company.name }
     title { Faker::Job.title }
     start_year { year_seed }
-    end_year { year_seed + Faker::Number.within(range: 1..(Date.current.year - year_seed)) }
+    end_year { year_seed + 5 }
 
     factory :job_with_items do
       after(:build) do |job|
