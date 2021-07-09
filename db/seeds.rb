@@ -6,4 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-FactoryBot.create_list(:resume, 2)
+
+10.times do
+  FactoryBot.create(:resume, :has_all)
+end
