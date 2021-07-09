@@ -10,10 +10,19 @@ end
 
 FactoryBot.define do
   factory :job do
+    resume
+    created_at { Time.now }
+    updated_at { Time.now }
     association :resume
     organization { Faker::Company.name }
     title { Faker::Job.title }
     start_year { year_seed }
     end_year { year_seed + Faker::Number.within(range: 1..(Date.current.year - year_seed)) }
+
+    factory :job_with_items do
+      after(:build) do |job|
+        job.list_items = build_list(:list_item, 5, :for_job, listable: job)
+      end
+    end
   end
 end

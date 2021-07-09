@@ -1,15 +1,13 @@
 FactoryBot.define do
   factory :category do
     resume
+    created_at { Time.now }
+    updated_at { Time.now }
     name { Faker::Lorem.word }
 
     factory :category_with_items do
-      transient do
-        item_count { 5 }
-      end
-      after_create do |category, evaluator|
-        create_list(:list_item, evaluator.item_count, category: category)
-        category.reload
+      after(:build) do |category|
+        category.list_items = build_list(:list_item, 5, :for_category, listable: category)
       end
     end
   end
